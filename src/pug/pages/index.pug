@@ -1,9 +1,71 @@
 extends ../includes/template
-
+block vars
+  -var bodyClass='is-home';
 block metatags
   title Effio
   meta(name="description", content="description")
 
 block main
+  article.slider
+    section.slider__content
+      h1.slider__title
+      a.slider__btn(href="#") Más Información
+      nav.slider__nav
+    figure.slider__item
+      img.slider__img
+  section.section
+    article.stock
+      figure.stock__fig
+      a.stock__btn(href="#") +
+      h2.stock__title Activo Fijo
+      ul.stock__list
+        li.stock__list-item Toma de Inventario
+        li.stock__list-item Identificación de los Bienes
+        li.stock__list-item Conciliación Fisica y Rentable
+        li.stock__list-item Resultados
+        li.stock__list-item Servicios Complementarios
+    article.stock
+      figure.stock__fig
+      a.stock__btn(href="#") +
+      h2.stock__title Mercancias y Almacenes en General
+      ul.stock__list
+        li.stock__list-item Toma de Inventario
+        li.stock__list-item Identificación de los Bienes
+        li.stock__list-item Ordenamiento de Almancén
+        li.stock__list-item Conciliación Fisica y Rentable
+        li.stock__list-item Resultados
+        li.stock__list-item Servicios Complementarios
+  section.section.about-us
+    .about-us__conatiner
+      h2.about-us__tittle Quienes #[span.t-semibold Somos]
+      p.about-us__content
+      a.about-us__btn
+        span.t-semibold Conósenos
+      figure.about-us__video 
+        iframe(src="https://player.vimeo.com/video/7396421" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen)
+  section.section-btn
+    p.section-btn__content.t-semibold Puede revisar nuestros servicos con nuestros clientes
+    a.section-btn__link(href="#") Aquí
+  section.section.logo-gallery
+    figure.logo-gallery__fig
+      img.logo-gallery__img(src="img/logo1.png", alt="")
+    figure.logo-gallery__fig
+      img.logo-gallery__img(src="img/logo2.png", alt="")
+    figure.logo-gallery__fig
+      img.logo-gallery__img(src="img/logo3.png", alt="")
+    figure.logo-gallery__fig
+      img.logo-gallery__img(src="img/logo4.png", alt="")
+    figure.logo-gallery__fig
+      img.logo-gallery__img(src="img/logo5.png", alt="")
+    figure.logo-gallery__fig
+      img.logo-gallery__img(src="img/logo6.png", alt="")
+    figure.logo-gallery__fig
+      img.logo-gallery__img(src="img/logo7.png", alt="")
+    figure.logo-gallery__fig
+      img.logo-gallery__img(src="img/logo8.png", alt="")
+    
   
+
+
+
   

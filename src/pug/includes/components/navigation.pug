@@ -1,5 +1,8 @@
-mixin navBar(items)
+mixin navBar(items,logo)
   nav.main-nav.navbar#mainNav
+    if logo
+      figure.logo
+        img.logo__img(src=logo)
     ul.menu
       each item in items
         li.menu__item
@@ -10,7 +13,7 @@ mixin navBar(items)
                 li.menu__item--sub-menu
                   a.menu__link--sub-menu(href=subItem.url) #{subItem.name}
                   if subItem.subMenu
-                    ul.menu--sub-menu
+                    ul.menu--sub-menu-l2
                       each subItem2 in subItem.subMenu
                         li.menu__item--sub-menu
                           a.menu__link--sub-menu(href=subItem2.url) #{subItem2.name}

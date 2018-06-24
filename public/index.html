@@ -7,10 +7,11 @@
     <title>Effio</title>
     <meta name="description" content="description">
   </head>
-  <body>
-    <header class="main-header">
-      <div class="a"></div>
+  <body class="is-home">
+    <header class="main-header is-home">
+      <adress class="contac-info"><span class="contac-info__item--mail"><a class="contac-info__link" href="mail:informes@effio.com.pe">informes@effio.com.pe</a></span><span class="contac-info__item--adress">Av. Nicolas Arriola Nro. 290 Dpto. 207</span><span class="contac-info__item--tel"><a class="contac-info__link" href="tel:+512242174">(+51) 224 21 74</a></span></adress>
           <nav class="main-nav navbar" id="mainNav">
+            <figure class="logo"><img class="logo__img" src="img/effio-logo.png"></figure>
             <ul class="menu">
               <li class="menu__item"><a class="menu__link" href="#">Inicio</a>
               </li>
@@ -19,7 +20,7 @@
               <li class="menu__item"><a class="menu__link" href="#">Servicios</a>
                 <ul class="menu--sub-menu">
                   <li class="menu__item--sub-menu"><a class="menu__link--sub-menu" href="#">Inventario de Activo Fijo</a>
-                    <ul class="menu--sub-menu">
+                    <ul class="menu--sub-menu-l2">
                       <li class="menu__item--sub-menu"><a class="menu__link--sub-menu" href="#">Toma de Inventario</a></li>
                       <li class="menu__item--sub-menu"><a class="menu__link--sub-menu" href="#">Indentificación de los Bienes</a></li>
                       <li class="menu__item--sub-menu"><a class="menu__link--sub-menu" href="#">Conciliación Física y Rentable</a></li>
@@ -36,6 +37,76 @@
             </ul>
           </nav>
     </header>
+    <main class="main-content">
+      <article class="slider">
+        <section class="slider__content">
+          <h1 class="slider__title"></h1><a class="slider__btn" href="#">Más Información</a>
+          <nav class="slider__nav"></nav>
+        </section>
+        <figure class="slider__item"><img class="slider__img"></figure>
+      </article>
+      <section class="section">
+        <article class="stock">
+          <figure class="stock__fig"></figure><a class="stock__btn" href="#">+</a>
+          <h2 class="stock__title">Activo Fijo</h2>
+          <ul class="stock__list">
+            <li class="stock__list-item">Toma de Inventario</li>
+            <li class="stock__list-item">Identificación de los Bienes</li>
+            <li class="stock__list-item">Conciliación Fisica y Rentable</li>
+            <li class="stock__list-item">Resultados</li>
+            <li class="stock__list-item">Servicios Complementarios</li>
+          </ul>
+        </article>
+        <article class="stock">
+          <figure class="stock__fig"></figure><a class="stock__btn" href="#">+</a>
+          <h2 class="stock__title">Mercancias y Almacenes en General</h2>
+          <ul class="stock__list">
+            <li class="stock__list-item">Toma de Inventario</li>
+            <li class="stock__list-item">Identificación de los Bienes</li>
+            <li class="stock__list-item">Ordenamiento de Almancén</li>
+            <li class="stock__list-item">Conciliación Fisica y Rentable</li>
+            <li class="stock__list-item">Resultados</li>
+            <li class="stock__list-item">Servicios Complementarios</li>
+          </ul>
+        </article>
+      </section>
+      <section class="section about-us">
+        <div class="about-us__conatiner">
+          <h2 class="about-us__tittle">Quienes <span class="t-semibold">Somos</span></h2>
+          <p class="about-us__content"></p><a class="about-us__btn"><span class="t-semibold">Conósenos</span></a>
+          <figure class="about-us__video"> 
+            <iframe src="https://player.vimeo.com/video/7396421" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          </figure>
+        </div>
+      </section>
+      <section class="section-btn">
+        <p class="section-btn__content t-semibold">Puede revisar nuestros servicos con nuestros clientes</p><a class="section-btn__link" href="#">Aquí</a>
+      </section>
+      <section class="section logo-gallery">
+        <figure class="logo-gallery__fig"><img class="logo-gallery__img" src="img/logo1.png" alt=""></figure>
+        <figure class="logo-gallery__fig"><img class="logo-gallery__img" src="img/logo2.png" alt=""></figure>
+        <figure class="logo-gallery__fig"><img class="logo-gallery__img" src="img/logo3.png" alt=""></figure>
+        <figure class="logo-gallery__fig"><img class="logo-gallery__img" src="img/logo4.png" alt=""></figure>
+        <figure class="logo-gallery__fig"><img class="logo-gallery__img" src="img/logo5.png" alt=""></figure>
+        <figure class="logo-gallery__fig"><img class="logo-gallery__img" src="img/logo6.png" alt=""></figure>
+        <figure class="logo-gallery__fig"><img class="logo-gallery__img" src="img/logo7.png" alt=""></figure>
+        <figure class="logo-gallery__fig"><img class="logo-gallery__img" src="img/logo8.png" alt=""></figure>
+      </section>
+    </main>
+    <footer class="main-footer">
+      <nav class="footer-nav">
+        <ul class="menu-ft">
+          <li class="menu-ft__item"><a class="menu-ft__link" href="#">Inicio</a></li>
+          <li class="menu-ft__item"><a class="menu-ft__link" href="#">Quienes Somos</a></li>
+          <li class="menu-ft__item"><a class="menu-ft__link" href="#">Servicios</a></li>
+          <li class="menu-ft__item"><a class="menu-ft__link" href="#">Contacto</a></li>
+        </ul>
+      </nav>
+      <figure class="footer-logo"><img class="footer-logo__img" src="img/logo-effio-white.png" alt="Effio y asociados"></figure>
+      <p class="avileble-time"><span class="t-semibold">Horario de Atención</span><br>
+        <time>Lunes - Viernes: 9am - 6pm</time>
+      </p><small class="copyright-info">2018 &copy; Todos los derechos reservados por <span class="t-semibold">Effio y Asociados</span></small>
+    </footer>
     <script src="js/script.js"></script>
   </body>
 </html>

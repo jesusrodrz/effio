@@ -5,9 +5,11 @@ html(lang="es")
     meta(name="viewport" content="initial-scale=1.0, width=device-width")
     link(rel="stylesheet" href="css/styles.css")
     block metatags
-
-  body
+  -var bodyClass=''
+  block vars
+  body(class=bodyClass)
     include templates/header
-    block main
+    main.main-content
+      block main
     include templates/footer
     script(src="js/script.js")
