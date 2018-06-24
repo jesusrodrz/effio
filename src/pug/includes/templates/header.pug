@@ -1,0 +1,5 @@
+include ../components/navigation
+-var items = [{name:'Inicio',url:'#'},{name:'Quienes somos',url:'#'},{name:'Servicios',url:'#',subMenu:[{name:'Inventario de Activo Fijo',url:'#',subMenu:[{name:'Toma de Inventario',url:'#'},{name:'Indentificación de los Bienes',url:'#'},{name:'Conciliación Física y Rentable',url:'#'},{name:'Resultados',url:'#'},{name:'Servicios Complementarios',url:'#'}]},{name:'Inventario de Almacen',url:'#'}]},{name:'Contacto',url:'#'}];
+header.main-header
+  .a
+  +navBar(items)

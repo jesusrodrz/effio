@@ -1,0 +1,33 @@
+{
+  "name": "effio-template",
+  "version": "1.0.0",
+  "description": "Template for effio website",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jesusrodrz/effio-html-template.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "javascript",
+    "template"
+  ],
+  "author": "Jesus Rodriguez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jesusrodrz/effio-html-template/issues"
+  },
+  "homepage": "https://github.com/jesusrodrz/effio-html-template#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.0.1",
+    "gulp-watch": "^5.0.0"
+  }
+}
