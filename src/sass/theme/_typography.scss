@@ -1,0 +1,25 @@
+.t-semibold{
+  font-family: segoe-ui-semibold;
+}
+.t-light{
+  font-family: segoe-ui-light;
+}
+.t-uppercase{
+  text-transform: uppercase;
+}
+
+.about-us{
+  &__title{
+    text-transform: uppercase;
+    position: relative;
+    &::before{
+      content:'';
+      height: 2px;
+      width: 3rem;
+      position: absolute;
+      top: calc(100% + 4px);
+      left: 0;
+      background-color: white;
+    }
+  }
+}

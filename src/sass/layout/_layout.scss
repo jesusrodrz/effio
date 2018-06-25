@@ -6,7 +6,7 @@
   height: var(--header-widget-height);
   &__wrapper{
     align-items: center;
-    justify-content: right;
+    justify-content: flex-end;
     display: flex;
     width: 100%;
     max-width: 1200px;
@@ -32,8 +32,15 @@
   height: var(--nav-height);
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
   // background-color: v(primary)
-
+  @at-root .is-home &{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: var(--header-widget-height);
+    z-index: 950;
+  }
 }
 
 .nav-logo{
@@ -46,9 +53,59 @@
 }
 
 .about-us{
-  padding: v(gap) 0;
+  padding: ($gap * 2) 0;
   &__conatiner{
     max-width: 1200px;
-    
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: v(gap);
+    height: 60vh;
+  }
+  &__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+  }
+  &__description{
+    margin-bottom: 2rem;
+  }
+  &__video{
+    width: 100%;
+    iframe{
+      height: 100%; 
+      width: 100%;
+      // display: none
+      // height: auto;
+    }
   }
 }
+
+.section-btn{
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.main-footer{
+  padding: $gap;
+  // display: none;
+  &__grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-auto-flow: dense;
+    grid-column-gap: v(gap);
+    max-width: 1200px;
+    // padding: 0 v(gap);
+    
+
+  }
+
+}
+  .footer-nav{
+    grid-column: 2 /3;
+    grid-row: 1 /3;
+    // display: flex;
+  }

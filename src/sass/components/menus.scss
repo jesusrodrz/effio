@@ -7,8 +7,9 @@
 
   display: flex;
   width: 100%;
-  justify-content: right;
+  justify-content: flex-end;
   color:white;
+  font-family: segoe-ui-semibold;
   // height: 100%;
   // flex-grow: 0;
   &__item{
@@ -41,10 +42,10 @@
   &__link{
     padding: 10px 1em;
     text-transform: uppercase;
-    // font-weight: 500;
     border: transparent solid 2px;
     position: relative;
     transition: all ease-out .2s;
+    text-align: center;
     
     &--sub-menu{
       padding: 8px 4px;
@@ -92,9 +93,11 @@
       transform: scale(0);
       transition: inherit;
       position: absolute;
-      top: 0px;
+      box-sizing: border-box;
+      display: block;
+      top: -1px;
       // top: 1px;
-      left: 0;
+      left: -1px;
       border: transparent 2px solid;
     } 
     &:hover{
@@ -114,7 +117,7 @@
     &,&-l2{
 
       position: absolute;
-      top:calc(100% + 4px);
+      top:calc(100% + 10px);
       width: 200%;
       right: 0;
       display: flex;
@@ -157,5 +160,45 @@
 
     }
   }
+
+}
+
+.menu-ft{
+  display: flex;
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  justify-content: flex-end;
+
+  &__item{
+    // padding: 1em 1em;
+    border-left: white solid 1.5px;
+  }
+
+  &__link{
+    padding: .6em .6em;
+    margin: 0 .6em;
+    position: relative;
+    
+    &:hover{
+      &::before{
+        transform: scale(1,1)
+
+      }
+    }
+    &::before{
+      content: '';
+      height: 2px;
+      width: 100%;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: v(accent);
+      transform: scale(0,1);
+      transition: all ease-in-out .4s;
+    }
+  }
+
+
 
 }

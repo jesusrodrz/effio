@@ -7,6 +7,79 @@
 .contac-info{
   font-size: 13px;
 }
-body{
-  background-color: v(primary-dark)
+
+.about-us{
+  background-color: v(primary);
+  color:white;
+  &__description{
+    text-align: justify;
+
+  }
+  &__btn{
+    margin-top: 1.5rem;
+    @extend .square-btn;
+    color: v(secondary);
+    transition: all cubic-bezier(0.455, 0.03, 0.515, 0.955) .4s;
+    &:hover{
+      background-color: rgba($color: #fff, $alpha: .4)
+    }
+  }
+
+}
+
+.section-btn{
+  @extend .t-semibold;
+  color: white;
+  // background-image: linear-gradient(to left, rgba($accent-color,.5 0),rgba($accent-color,.5)),url('../img/office-14.jpg');
+  $color-accent:lighten($color-accent,10);
+  $color-accent:saturate($color-accent,20);
+  // $color-accent:saturate($color-accent,20);
+  background-image: linear-gradient(to left, rgba($color-accent,.8) 0%,rgba($color-accent,.8) 100%),url('../img/office-14.jpg');
+  font-size: 1.3em;
+  background-position: center center;
+  background-size: cover;
+
+  &__link{
+    color: v(accent);
+    padding: .4em 2em;
+    background-color: white;
+    transition: all cubic-bezier(0.645, 0.045, 0.355, 1) .4s;
+    
+    &:hover{
+      background-color: v(accent);
+      color:white;
+    }
+  }
+}
+
+.main-footer{
+  background-color: v(gray);
+  border-top: solid 3px v(gray-light);
+  @at-root .is-home &{
+    border-top-color: v(accent);
+  }
+  color:white;
+}
+.avileble-time{
+  display: grid;
+  grid-template-columns:3.5em 1fr;
+  .t-semibold{
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    align-self: end;
+    // vertical-align: bottom;
+  }
+  time{
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+  &::before{
+    content: '\e900';
+    font-family: Flaticon;
+    font-size: 3em;
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+
+  }
+
 }
