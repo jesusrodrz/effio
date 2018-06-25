@@ -44,7 +44,7 @@
 }
 
 // mobile-first breakpoint mixin
-@mixin media($breakpoint: md, $key: min, $orientation: false) {
+@mixin media($breakpoint: md, $key: max, $orientation: false) {
 
   @if ($orientation) {
 		@if type-of($breakpoint) == number {

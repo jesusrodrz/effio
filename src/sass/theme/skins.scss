@@ -1,11 +1,17 @@
 .is-home{
   .contac-info{
     background-color: v(primary-dark);
-    color: white;
+    
   }
+}
+.main-header{
+  background-color: v(primary-dark);
 }
 .contac-info{
   font-size: 13px;
+  color: white;
+  background-image: linear-gradient(to left, rgba(#000,.5) 0, rgba(#000,.5) 100%)
+  ;
 }
 
 .about-us{
@@ -38,7 +44,9 @@
   font-size: 1.3em;
   background-position: center center;
   background-size: cover;
-
+  &__content{
+    text-align: center;
+  }
   &__link{
     color: v(accent);
     padding: .4em 2em;
@@ -76,7 +84,7 @@
   &::before{
     content: '\e900';
     font-family: Flaticon;
-    font-size: 3em;
+    font-size: 2.5em;
     grid-column: 1 / 2;
     grid-row: 1 / 3;
 

@@ -10,32 +10,68 @@
   justify-content: flex-end;
   color:white;
   font-family: segoe-ui-semibold;
-  // height: 100%;
-  // flex-grow: 0;
+  transition: all ease-in-out .5s;
+
+  &.open{
+    transform: translateX(0);
+
+  }
+
+  @include media(md){
+    // display: none;
+    position: absolute;
+    top: 100%;
+    transform: translateX(100%);
+    flex-direction: column;
+    height: 100vh;
+    justify-content: flex-start;
+    background-image: linear-gradient(to left,rgba($color-primary-dark,.9) 0%,rgba($color-primary-dark,.9) 100%);
+    z-index: 900;
+    margin-top: 0;
+  }
+
+
   &__item{
     align-items: center;
     // display: flex;
-    margin: 0 1em;
+    margin: 0 0 0 1em;
     position: relative;
-    // background-color: aqua
     padding: 10px 0;
     transition: all ease-out .2s;
+    justify-content: center;
+    @include media(md){
+      display: flex;
+      flex-direction: column;
+      // display: none;
+      // justify-content: center
+    }
+    @include media(1000px){
+      margin: 0;
+
+    }
 
     &--sub-menu{
       text-align: right;
       &:hover{
-        .menu--sub-menu-l2{
-          transform: scale(1,1);
-          opacity: 1;
-  
+       
+        @include media(md,min){
+
+          .menu--sub-menu-l2{
+            transform: scale(1,1);
+            opacity: 1;
+    
+          }
         }
       }
     }
     &:hover{
-      .menu--sub-menu{
-        transform: scale(1,1);
-        opacity: 1;
+      @include media(md,min){
 
+        .menu--sub-menu{
+          transform: scale(1,1);
+          opacity: 1;
+  
+        }
       }
     }
   }
@@ -46,7 +82,13 @@
     position: relative;
     transition: all ease-out .2s;
     text-align: center;
-    
+    @include media(1000px){
+      padding: 10px .5em;
+    }
+    @include media(md){
+      display: block;
+      width: 100%;
+    }
     &--sub-menu{
       padding: 8px 4px;
       display: block;
@@ -55,6 +97,7 @@
       transition: inherit;
 
       &.#{has-sub-menu}{
+
         &::before{
           // display: inline;
           content:'\e908 dsadsadas';
@@ -63,8 +106,16 @@
           font-size: inherit;
           font-style: normal;
           vertical-align: center;
-          
+          @include media(md){
+            content:'\e908 ';
+          }
         }
+        &.open{
+          &::before{
+            content:'\e905 ';
+          }
+        }
+        
       }
 
       &:hover{
@@ -77,13 +128,30 @@
     &.#{has-sub-menu}{
       &::after{
         // display: inline;
-        content:'\e908 dsadsadas';
-        content:'\e908 ';
+        // content:'\e908 dsadsadas';
+        content:'\e908';
         font-family: Flaticon;
         font-size: inherit;
         font-style: normal;
-        vertical-align: center;
+        // vertical-align: center;
+        margin: 0;
+        padding: 0;
+        display: inline;
         
+      }
+      &.open.#{has-sub-menu}{
+        &::after{
+
+          content:'\e905 ';
+        }
+      }
+      @include media(md){
+        position: relative;
+        &::after{
+          position: absolute;
+          right: v(gap);
+          font-size: 1.5rem;
+        }
       }
     }
     &::before{
@@ -99,9 +167,13 @@
       // top: 1px;
       left: -1px;
       border: transparent 2px solid;
+      @include media(md){
+        display: none;
+      }
     } 
     &:hover{
       color: v(secondary);
+      // color: red;
       &::before{
         border-color: v(secondary);
         transform: scale(1)
@@ -114,6 +186,22 @@
     }
   }
   &--sub-menu{
+
+    @include media(md){
+      &.open{
+        
+        background-image: linear-gradient(to left,rgba($color-primary-dark,1) 0%,rgba($color-primary-dark,1) 100%);
+        transform: scale(1,1);
+        opacity: 1;
+        top:calc(100%);
+      }
+      &-l2.open{
+        background-image: linear-gradient(to left,rgba($color-primary-dark,1) 0%,rgba($color-primary-dark,1) 100%);
+        opacity: 1;
+        transform: scale(1,1);
+        top:calc(100%);
+      }
+    }
     &,&-l2{
 
       position: absolute;
@@ -123,7 +211,7 @@
       display: flex;
       flex-direction: column;
       justify-content: right;
-      background-image: linear-gradient(to left,rgba($color-primary-dark,.5) 0%,rgba($color-primary-dark,.5) 100%);
+      background-image: linear-gradient(to left,rgba($color-primary-dark,.7) 0%,rgba($color-primary-dark,.7) 100%);
       transform: scale(1,0);
       transition: inherit;
       transform-origin: top;
@@ -131,33 +219,36 @@
       z-index: 1000;
     }
 
-    &-l2{
-      // display: none;
-      transform: scale(0,1);
-      opacity: 0;
-      transform-origin: right;
-      top:0;
-      width: 100%;
-      right: calc(100% + 5px);
-      transition: all ease-out .2s;
-      .menu__item--sub-menu{
-        &:hover{
-          color: v(secondary)
-        }
-      }
-      .menu__link--sub-menu{
-        &:hover{
-          color: v(secondary)
-        }
-      }
-      &:hover{
-        .menu--sub-menu-l2{
-          transform: scale(1,1);
-          opacity: 1;
-  
-        }
-      }
+    @include media(md,min){
 
+      &-l2{
+        // display: none;
+        transform: scale(0,1);
+        opacity: 0;
+        transform-origin: right;
+        top:0;
+        width: 100%;
+        right: calc(100% + 5px);
+        transition: all ease-out .2s;
+        .menu__item--sub-menu{
+          &:hover{
+            color: v(secondary)
+          }
+        }
+        .menu__link--sub-menu{
+          &:hover{
+            color: v(secondary)
+          }
+        }
+        &:hover{
+          .menu--sub-menu-l2{
+            transform: scale(1,1);
+            opacity: 1;
+    
+          }
+        }
+  
+      }
     }
   }
 
@@ -170,15 +261,29 @@
   padding-left: 0;
   justify-content: flex-end;
 
+  @include media (md){
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border: none;
+    align-items: stretch
+  }
+
   &__item{
     // padding: 1em 1em;
     border-left: white solid 1.5px;
+    @include media (md){
+      border-left: none;
+      margin: .5em 0;
+    }
   }
 
   &__link{
     padding: .6em .6em;
     margin: 0 .6em;
     position: relative;
+    @include media (md){
+      margin: 1em 0;
+    }
     
     &:hover{
       &::before{

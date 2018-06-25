@@ -1,3 +1,10 @@
+.section{
+  &__title{
+    color: v(primary-dark);
+    font-family: segoe-ui-light;
+    margin: v(gap) 0;
+  }
+}
 .t-semibold{
   font-family: segoe-ui-semibold;
 }
@@ -23,3 +30,4 @@
     }
   }
 }
+

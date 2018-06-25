@@ -2,3 +2,81 @@
   padding: .6em 1.6em;
   border: solid v(secondary) 2px;
 }
+
+
+.menu-icon{
+  $size:40px;
+  position: absolute;
+  top:50%;
+  // left:50%;
+  right: 1em;
+  transform: translate(-50%, -50%);
+  width: $size;
+  cursor: pointer;
+  height: $size;
+  display: none;
+  @include media(md){
+    display: block;
+  }
+  @include media(xs){
+    $size:25px;
+    right: .5em;
+    width: $size;
+    height: $size;
+  }
+  &:hover #{&}__item{
+    background: v(secondary);
+    
+  }
+  &__item{
+    display: block;
+    height: 5px;
+    @include media(xs){
+      height: 4px;
+
+    }
+    width: 100%;
+    background: white;
+    position: absolute;
+    border-radius: 100px;
+    transform-origin: center;
+    transition: all .3s;
+  }
+  
+  &__item:nth-child(1){
+    top: 0;
+  }
+  &__item:nth-child(2){
+    top: 50% ;
+    transform: translateY(-50%);
+  }
+  &__item:nth-child(3){
+    bottom: 0;
+  }
+  
+  &.#{open} #{&}__item:nth-child(1){
+    transform:  translateY(-50%) rotate(-135deg);
+    top: 50%;
+  }
+  &.#{open} #{&}__item:nth-child(2){
+    transform:  scale(0,1);
+  }
+  &.#{open} #{&}__item:nth-child(3){
+    transform:  translateY(-50%) rotate(135deg);
+    top: 50%;
+  }
+
+  // &:hover #{&}__item:nth-child(1){
+  //   transform:  translateY(-50%) rotate(-135deg);
+  //   top: 50%;
+  // }
+  // &:hover #{&}__item:nth-child(2){
+  //   transform:  scale(0,1);
+  //   background-color: transparent;
+  // }
+  // &:hover #{&}__item:nth-child(3){
+  //   transform:  translateY(-50%) rotate(135deg);
+  //   top: 50%;
+  // }
+
+}

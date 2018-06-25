@@ -8,6 +8,10 @@
   grid-gap: v(gap);
   grid-template-columns: repeat(2,1fr);
   margin: 0 auto;
+
+  @include media(700px){
+    grid-template-columns: repeat(1,1fr);
+  }
   &-item{
     position: relative;
     padding: v(gap);

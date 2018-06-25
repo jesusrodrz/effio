@@ -1,0 +1,39 @@
+extends ../includes/template
+block vars
+  //- -var bodyClass='is-home';
+block metatags
+  title Effio
+  meta(name="description", content="description")
+
+block main
+  section.section-wrapper
+    h2.section__title.t-uppercase Inventario de #[span.t-semibold Activo Fijo]
+    article.grid-links
+      article.grid-links__item
+        a.grid-links__link(href='#')
+          span.grid-links__text Toma de 
+          span.grid-links__text.t-semibold Inventario
+          img.grid-links__img(src="img/stock1.jpg", alt="")
+      article.grid-links__item
+        a.grid-links__link(href="#")
+          span.grid-links__text Identificación
+          span.grid-links__text.t-semibold de los Bienes
+          img.grid-links__img(src="img/stock1.jpg", alt="")
+      article.grid-links__item
+        a.grid-links__link(href="#")
+          span.grid-links__text Conciliación
+          span.grid-links__text.t-semibold Fisica y Rentable
+          img.grid-links__img(src="img/stock1.jpg", alt="")
+      article.grid-links__item
+        a.grid-links__link(href="#")
+          span.grid-links__text.t-semibold Resultados
+          img.grid-links__img(src="img/stock1.jpg", alt="")
+      article.grid-links__item
+        a.grid-links__link(href="#")
+          span.grid-links__text Servicos  
+          span.grid-links__text.t-semibold Complementarios
+          img.grid-links__img(src="img/stock1.jpg", alt="")
+  section.section-btn
+    p.section-btn__content.t-semibold Puede revisar nuestros servicos con nuestros clientes
+    a.section-btn__link.t-uppercase(href="#") Aquí
+

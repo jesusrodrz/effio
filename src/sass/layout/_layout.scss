@@ -4,6 +4,12 @@
 .contac-info{
   display: block;
   height: var(--header-widget-height);
+  @include media(550px){
+    --header-widget-height: 80px;
+    //  padding: 0m;
+
+  }
+  padding: 0 1em;
   &__wrapper{
     align-items: center;
     justify-content: flex-end;
@@ -12,7 +18,14 @@
     max-width: 1200px;
     margin: 0 auto;
     height: 100%;
-    
+    @include media(md){    
+      justify-content: space-around;
+
+    }
+    @include media(550px){
+      flex-wrap: wrap;
+  
+    }
   }
   &__icon{
     margin-right: 5px
@@ -20,10 +33,16 @@
 }
   [class*='contac-info__item']{
     margin-left: 2.5em;
+    @include media(md){    
+      margin-left: 0;
+    }
   }
 
 :root{
   --nav-height:80px;
+}
+body{
+  overflow-x: hidden;
 }
 .main-nav{
   display: flex;
@@ -33,6 +52,14 @@
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
+  position: relative;
+  // overflow: hidden;
+  @include media(550px){
+    --header-widget-height: 80px;
+    // height: var(--header-widget-height) * 2;
+  }
+  // overflow-x: hidden;
+  // overflow-y: hidden;
   // background-color: v(primary)
   @at-root .is-home &{
     position: absolute;
@@ -40,27 +67,48 @@
     transform: translateX(-50%);
     top: var(--header-widget-height);
     z-index: 950;
+
+    @include media(550px){
+      --header-widget-height: 80px;
+      // height: var(--header-widget-height) * 2;
+    }
   }
 }
 
 .nav-logo{
   height: 80%;
+  @include media(1000px){
+    height: 60%;
+  }
+  @include media(sm){
+    height: 50%;
+  }
+  @include media(xs){
+    height: 40%;
+  }
   &__img{
     height: 100%;
-
+    @include media(md){
+      margin-left: 1em;
+    }
   }
 
 }
 
 .about-us{
-  padding: ($gap * 2) 0;
+  padding: $gap  v(gap);
   &__conatiner{
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(2,1fr);
     grid-gap: v(gap);
-    height: 60vh;
+    // height: 60vh;
+    // min-width: 60vh;
+    @include media(md){
+      grid-template-columns: repeat(1,1fr);
+      grid-template-rows: 60vh;
+    }
   }
   &__content{
     display: flex;
@@ -80,7 +128,15 @@
     }
   }
 }
-
+.section-wrapper{
+  max-width: 1200px;
+  margin: auto;
+  width: 100%;
+  margin-bottom: v(gap);
+  @include media(1200px){
+    padding: 0 v(gap)
+  }
+}
 .section-btn{
   height: 30vh;
   display: flex;
@@ -99,7 +155,9 @@
     grid-column-gap: v(gap);
     max-width: 1200px;
     // padding: 0 v(gap);
-    
+    @include  media (md){
+      grid-template-columns: repeat(1,1fr);
+    }
 
   }
 
@@ -108,4 +166,18 @@
     grid-column: 2 /3;
     grid-row: 1 /3;
     // display: flex;
+    @include  media (md){
+      grid-column: 1 /2;
+      grid-row: 2 /3;
+    }
+  }
+  .footer-logo{
+    // height: 80px;
+
+    @include media(sm){
+      height: 40px;
+    }
+    &__img{
+      height: 100%;
+    }
   }
