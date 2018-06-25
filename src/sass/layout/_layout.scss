@@ -1,0 +1,54 @@
+:root{
+  --header-widget-height:40px;
+}
+.contac-info{
+  display: block;
+  height: var(--header-widget-height);
+  &__wrapper{
+    align-items: center;
+    justify-content: right;
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    
+  }
+  &__icon{
+    margin-right: 5px
+  }
+}
+  [class*='contac-info__item']{
+    margin-left: 2.5em;
+  }
+
+:root{
+  --nav-height:80px;
+}
+.main-nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--nav-height);
+  max-width: 1200px;
+  margin: 0 auto;
+  // background-color: v(primary)
+
+}
+
+.nav-logo{
+  height: 80%;
+  &__img{
+    height: 100%;
+
+  }
+
+}
+
+.about-us{
+  padding: v(gap) 0;
+  &__conatiner{
+    max-width: 1200px;
+    
+  }
+}

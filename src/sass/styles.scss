@@ -23,10 +23,14 @@
   // Crea los archivos adicionales que necesites (uno por componente)
 @import "components/buttons";
 @import "components/menus";
+@import "components/header";
+@import "components/slider";
+@import "components/grid-card";
 
 
 // Theme (colors and fonts)
 @import "theme/typography";
+@import "theme/skins";
 
 // Utilities (hacks)
   // Todos los hacks que hayas necesitado para solucionar conflictos

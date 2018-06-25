@@ -8,39 +8,52 @@ block metatags
 block main
   article.slider
     section.slider__content
-      h1.slider__title
-      a.slider__btn(href="#") Más Información
+      .slider__view
+        h1.slider__title Conozca el #[span.t-semibold Valor Real] 
+          |  
+          br 
+          |de su Almacen
+        a.slider__btn(href="#") Más Información
+          span.slider__btn--bg
       nav.slider__nav
+        span.slider__trigger
+        span.slider__trigger
+        span.slider__trigger
+        span.slider__trigger
     figure.slider__item
-      img.slider__img
-  section.section
-    article.stock
-      figure.stock__fig
-      a.stock__btn(href="#") +
-      h2.stock__title Activo Fijo
-      ul.stock__list
-        li.stock__list-item Toma de Inventario
-        li.stock__list-item Identificación de los Bienes
-        li.stock__list-item Conciliación Fisica y Rentable
-        li.stock__list-item Resultados
-        li.stock__list-item Servicios Complementarios
-    article.stock
-      figure.stock__fig
-      a.stock__btn(href="#") +
-      h2.stock__title Mercancias y Almacenes en General
-      ul.stock__list
-        li.stock__list-item Toma de Inventario
-        li.stock__list-item Identificación de los Bienes
-        li.stock__list-item Ordenamiento de Almancén
-        li.stock__list-item Conciliación Fisica y Rentable
-        li.stock__list-item Resultados
-        li.stock__list-item Servicios Complementarios
+      img.slider__img(src="img/slide-bg.jpg", alt="")
+  section.section.stock--section
+    .stock
+      article.stock-item
+        figure.stock__fig
+          img.stock__img(src="img/stock1.jpg", alt="")
+        a.stock__btn(href="#") +
+        h2.stock__title Activo Fijo
+        ul.stock__list
+          li.stock__list-item Toma de Inventario
+          li.stock__list-item Identificación de los Bienes
+          li.stock__list-item Conciliación Fisica y Rentable
+          li.stock__list-item Resultados
+          li.stock__list-item Servicios Complementarios
+      article.stock-item
+        figure.stock__fig
+          img.stock__img(src="img/stock2.jpg", alt="")
+        a.stock__btn(href="#") +
+        h2.stock__title Mercancias y Almacenes en General
+        ul.stock__list
+          li.stock__list-item Toma de Inventario
+          li.stock__list-item Identificación de los Bienes
+          li.stock__list-item Ordenamiento de Almancén
+          li.stock__list-item Conciliación Fisica y Rentable
+          li.stock__list-item Resultados
+          li.stock__list-item Servicios Complementarios
   section.section.about-us
     .about-us__conatiner
-      h2.about-us__tittle Quienes #[span.t-semibold Somos]
-      p.about-us__content
-      a.about-us__btn
-        span.t-semibold Conósenos
+      section.about-us__content
+        h2.about-us__tittle Quienes #[span.t-semibold Somos]
+        p.about-us__description
+        a.about-us__btn
+          span.t-semibold Conósenos
       figure.about-us__video 
         iframe(src="https://player.vimeo.com/video/7396421" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen)
   section.section-btn

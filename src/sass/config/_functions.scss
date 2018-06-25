@@ -1,0 +1,3 @@
+@function v($var){
+  @return unquote("var(--#{$var})");
+}

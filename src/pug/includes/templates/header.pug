@@ -1,11 +1,18 @@
 include ../components/navigation
--var items = [{name:'Inicio',url:'#'},{name:'Quienes somos',url:'#'},{name:'Servicios',url:'#',subMenu:[{name:'Inventario de Activo Fijo',url:'#',subMenu:[{name:'Toma de Inventario',url:'#'},{name:'Indentificación de los Bienes',url:'#'},{name:'Conciliación Física y Rentable',url:'#'},{name:'Resultados',url:'#'},{name:'Servicios Complementarios',url:'#'}]},{name:'Inventario de Almacen',url:'#'}]},{name:'Contacto',url:'#'}];
+-var items = [{name:'Inicio',url:'#'},{name:'Quienes somos',url:'#'},{name:'Servicios',url:'#',subMenu:[{name:'Inventario de Activo Fijo',url:'#',subMenu:[{name:'Toma de Inventario',url:'#'},{name:'Indentificación de los Bienes',url:'#'},{name:'Conciliación Física y Rentable',url:'#'},{name:'Resultados',url:'#'},{name:'Servicios Complementarios',url:'#'}]},{name:'Inventario de Almacenes',url:'#',subMenu:[{name:'Toma de Inventario',url:'#'},{name:'Indentificación de los Bienes',url:'#'},{name:'Conciliación Física y Rentable',url:'#'},{name:'Resultados',url:'#'},{name:'Servicios Complementarios',url:'#'}]}]},{name:'Contacto',url:'#'}];
 -var logo='img/effio-logo.png'
 header.main-header.is-home
   adress.contac-info
-    span.contac-info__item--mail
-      a.contac-info__link(href='mail:informes@effio.com.pe') informes@effio.com.pe
-    span.contac-info__item--adress Av. Nicolas Arriola Nro. 290 Dpto. 207
-    span.contac-info__item--tel
-      a.contac-info__link(href='tel:+512242174') (+51) 224 21 74
+    .contac-info__wrapper
+      span.contac-info__item--mail
+        a.contac-info__link(href='mailto:informes@effio.com.pe') 
+          span.icon-mail.contac-info__icon
+          | informes@effio.com.pe
+      span.contac-info__item--adress 
+        span.icon-marker.contac-info__icon
+        | Av. Nicolas Arriola Nro. 290 Dpto. 207
+      span.contac-info__item--tel
+        a.contac-info__link(href='tel:+512242174') 
+          span.icon-headphones.contac-info__icon
+          | (+51) 224 21 74
   +navBar(items,logo)
