@@ -1296,7 +1296,8 @@ body {
   .avileble-time .t-semibold, .avileble-time .section-btn {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
-    align-self: end; }
+    align-self: end;
+    vertical-align: inherit; }
   .avileble-time time {
     grid-column: 2 / 3;
     grid-row: 2 / 3; }
