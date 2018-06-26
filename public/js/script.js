@@ -45,6 +45,7 @@ function navBar() {
 }
 navBar()
 
-window.addEventListener('click', e => {
-  console.log(e.target)
+
+window.addEventListener('resize', e => {
+  navBar()
 })
