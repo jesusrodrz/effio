@@ -51,16 +51,22 @@ body{
   height: var(--nav-height);
   max-width: 1200px;
   margin: 0 auto;
+  // margin: 0 1em;
+
   width: 100%;
   position: relative;
+
   // overflow: hidden;
+  @include media(1200px){
+    padding: 0 1em;
+  }
+  @include media(md){
+    // margin: 0 auto;
+  }
   @include media(550px){
     --header-widget-height: 80px;
     // height: var(--header-widget-height) * 2;
   }
-  // overflow-x: hidden;
-  // overflow-y: hidden;
-  // background-color: v(primary)
   @at-root .is-home &{
     position: absolute;
     left: 50%;
@@ -80,6 +86,9 @@ body{
 
 .nav-logo{
   height: 80%;
+  @include media(1050px){
+    height: 70%;
+  }
   @include media(1000px){
     height: 60%;
   }

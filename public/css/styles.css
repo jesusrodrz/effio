@@ -552,6 +552,9 @@ a {
   margin: 0 auto;
   width: 100%;
   position: relative; }
+  @media (max-width: 1200px) {
+    .main-nav {
+      padding: 0 1em; } }
   @media (max-width: 550px) {
     .main-nav {
       --header-widget-height: 80px; } }
@@ -570,6 +573,9 @@ a {
 
 .nav-logo {
   height: 80%; }
+  @media (max-width: 1050px) {
+    .nav-logo {
+      height: 70%; } }
   @media (max-width: 1000px) {
     .nav-logo {
       height: 60%; } }
