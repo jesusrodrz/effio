@@ -73,6 +73,9 @@ body{
       // height: var(--header-widget-height) * 2;
     }
   }
+  @at-root body:not(.is-home) .menu{
+    top: calc(var(--header-widget-height) + var(--nav-height))
+  }
 }
 
 .nav-logo{
@@ -189,7 +192,12 @@ body{
   }
   .footer-logo{
     // height: 80px;
-
+    @include media(md){
+      height: 70px
+    }
+    @include media(540px){
+      height: 60px
+    }
     @include media(sm){
       height: 40px;
     }

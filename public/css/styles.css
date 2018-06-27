@@ -565,6 +565,8 @@ a {
     @media (max-width: 550px) {
       .is-home .main-nav {
         --header-widget-height: 80px; } }
+  body:not(.is-home) .menu {
+    top: calc(var(--header-widget-height) + var(--nav-height)); }
 
 .nav-logo {
   height: 80%; }
@@ -653,6 +655,14 @@ a {
     .footer-nav {
       grid-column: 1 /2;
       grid-row: 2 /3; } }
+
+@media (max-width: 54rem) {
+  .footer-logo {
+    height: 70px; } }
+
+@media (max-width: 540px) {
+  .footer-logo {
+    height: 60px; } }
 
 @media (max-width: 32rem) {
   .footer-logo {
