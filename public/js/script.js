@@ -9,11 +9,19 @@ function navBar() {
 
     let navState = false;
     let subMenuC = null
-    if (window.innerWidth < 864) {
 
+    console.log(window.outerWidth)
+    if (window.outerWidth < 864) {
+      console.log('b')
       navBar.addEventListener('click', e => {
+        if (e.target.classList.contains('has-sub-menu')) {
+          e.preventDefault();
+          // navTrigger.classList.toggle('open')
+          // menu.classList.toggle('open')
+        }
         if (e.target.closest('#navTrigger')) {
           e.preventDefault();
+          menu.style.display = 'flex';
           navTrigger.classList.toggle('open')
           menu.classList.toggle('open')
 

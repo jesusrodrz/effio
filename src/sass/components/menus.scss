@@ -14,12 +14,12 @@
 
   &.open{
     transform: translateX(0);
-
+    display: flex;
   }
 
   @include media(md){
     // display: none;
-    position: absolute;
+    position: fixed;
     top: 100%;
     transform: translateX(100%);
     flex-direction: column;

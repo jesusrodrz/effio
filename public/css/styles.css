@@ -543,9 +543,6 @@ a {
 :root {
   --nav-height:80px; }
 
-body {
-  overflow-x: hidden; }
-
 .main-nav {
   display: flex;
   justify-content: space-between;
@@ -734,10 +731,11 @@ body {
     padding-left: 0; }
   .menu.open {
     -webkit-transform: translateX(0);
-            transform: translateX(0); }
+            transform: translateX(0);
+    display: flex; }
   @media (max-width: 54rem) {
     .menu {
-      position: absolute;
+      position: fixed;
       top: 100%;
       -webkit-transform: translateX(100%);
               transform: translateX(100%);
@@ -1039,7 +1037,7 @@ body {
       opacity: 1; }
   .slider__img {
     height: auto;
-    width: 100%; }
+    height: 100%; }
 
 .stock {
   display: grid;
