@@ -62,6 +62,7 @@ body{
   }
   @include media(md){
     // margin: 0 auto;
+    padding: 0 0;
   }
   @include media(550px){
     --header-widget-height: 80px;
