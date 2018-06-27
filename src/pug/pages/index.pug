@@ -6,7 +6,7 @@ block metatags
   meta(name="description", content="description")
 
 block main
-  article.slider
+  article.slider#mainSlider
     section.slider__content
       .slider__view
         h1.slider__title.t-light Conozca el #[span.t-semibold Valor Real] 
@@ -15,13 +15,18 @@ block main
           |de su Almacen
         a.slider__btn.t-semibold(href="#") Más Información
           span.slider__btn--bg
-      nav.slider__nav
-        span.slider__trigger
-        span.slider__trigger
-        span.slider__trigger
-        span.slider__trigger
-    figure.slider__item
+      nav.slider__nav#sliderNav
+        
+    figure.slider__item.active
       img.slider__img(src="img/slide-bg.jpg", alt="")
+    figure.slider__item
+      img.slider__img(src="img/office-14.jpg", alt="")
+    figure.slider__item
+      img.slider__img(src="img/stock1.jpg", alt="")
+    figure.slider__item
+      img.slider__img(src="img/stock2.jpg", alt="")
+    
+    
   section.section.stock--section
     .stock
       article.stock-item
@@ -52,8 +57,7 @@ block main
       section.about-us__content
         h2.about-us__title.t-light Quienes #[span.t-semibold Somos]
         p.about-us__description #[span.t-semibold.t-uppercase Effio y Asociados] es una forma de consultoría especializada en brindar el servico Toma de Inventario Físico, Conciliación, Valorización y Tasación del Activo Fijo y Almacenes, lo que permite a nuestros clientes mantener un adecuado control de sus activos fijos y corrientes.
-        .div
-          a.about-us__btn.t-uppercase.t-semibold(href="#") Conósenos
+        a.about-us__btn.t-uppercase.t-semibold(href="#") Conósenos
       figure.about-us__video 
         iframe(src="https://player.vimeo.com/video/250761993" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen)
   section.section-btn

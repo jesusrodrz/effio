@@ -49,3 +49,41 @@ navBar()
 window.addEventListener('resize', e => {
   navBar()
 })
+
+function effioSlider() {
+
+  const slider = document.getElementById('mainSlider');
+
+  if (slider) {
+
+    const nav = document.getElementById('sliderNav'),
+      slides = [...slider.getElementsByClassName('slider__item')],
+      btns = slides.map(slide => {
+
+        const btn = document.createElement('span');
+
+        btn.classList.add('slider__trigger');
+
+        nav.appendChild(btn);
+
+        return btn
+      })
+
+    nav.addEventListener('click', e => {
+
+      const index = btns.indexOf(e.target);
+
+      slides.forEach(slide => {
+        if (slide.classList.contains('active')) {
+          slide.classList.remove('active')
+        }
+      })
+      slides[index].classList.add('active');
+
+
+    })
+
+  }
+
+}
+effioSlider()
