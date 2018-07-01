@@ -2,14 +2,38 @@
   &__title{
     color: v(primary-dark);
     font-family: segoe-ui-light;
-    margin: v(gap) 0;
+    
+
+    &--about{
+      position: relative;
+
+      &::before{
+        content:'';
+        height: 2px;
+        width: 3rem;
+        position: absolute;
+        top: calc(100% + 4px);
+        left: 0;
+        background-color: v(primary-dark);
+      }
+    }
   }
+  &__description{
+    color: v(primary-dark);
+    text-align: justify;
+  }
+
+  
 }
 .t-semibold{
   font-family: segoe-ui-semibold;
 }
+.t-bold{
+  font-family: segoe-ui-bold;
+}
 .t-light{
   font-family: segoe-ui-light;
+  font-weight: 100;
 }
 .t-uppercase{
   text-transform: uppercase;

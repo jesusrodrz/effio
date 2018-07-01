@@ -307,3 +307,23 @@
 
 
 }
+
+
+.side-menu{
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  color: v(primary-dark);
+  font-size: 1.2em;
+  margin: 0;
+
+  &__link{
+    padding: .6em 1em;
+    display: block;
+    transition: all .4s ease-in-out;
+    &.active,&:hover{
+      background-color: v(accent);
+      color: white;
+    }
+  }
+}

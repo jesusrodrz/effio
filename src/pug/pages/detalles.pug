@@ -1,0 +1,32 @@
+extends ../includes/template
+block vars
+  //- -var bodyClass='is-home';
+block metatags
+  title Effio
+  meta(name="description", content="description")
+
+block main
+  section.section-wrapper.section-details
+    h2.section-details__title.section__title.t-uppercase Inventario de #[span.t-semibold Activo Fijo]
+    nav.section-details__nav
+      ul.side-menu
+        li.side-menu__item
+          a.side-menu__link.t-bold(href="#") Toma de Inventario
+        li.side-menu__item
+          a.side-menu__link.t-bold(href="#") Identificación de los bienes
+        li.side-menu__item
+          a.side-menu__link.t-bold(href="#") Conciliación física y contable
+        li.side-menu__item
+          a.active.side-menu__link.t-bold(href="#") Resultados
+        li.side-menu__item
+          a.side-menu__link.t-bold(href="#") Servicios complementarios
+    ul.section-details__list.section__list
+      li.section__list-item Relación de los Activos y Bienes no depreciables en uso por el cliente, por tipo de bien, por ubicación, por centro de costo o por usuario.
+      li.section__list-item Relación Valorizada de los Activos Fijos y Bienes no depreciables del cliente que sustenten los estados financieros.
+      li.section__list-item Relación Valorizada de los Bienes Faltantes y Bienes Sobrantes, su impacto financiero y tributario, así como su tratamiento sobre ellos.
+      li.section__list-item Actas de Asignación de Bienes por Usuario responsable de los bienes, debidamente firmada por el usuario que asume su responsabilidad sobre ellos.
+      li.section__list-item Elaboración de Informes Técnicos para dar de baja bienes excedentes, inservibles u obsoletos. 
+      li.section__list-item Fichas y álbum fotográfico de cada uno de los bienes ubicados durante el inventario.
+    figure.section-details__fig
+      img.section-details__img(src="img/detalles.jpg", alt="")
+        

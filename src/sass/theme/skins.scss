@@ -34,6 +34,31 @@
 
 }
 
+.section{
+  &__title{
+  }
+  &__list{
+    color: v(primary-dark);
+    list-style: none;
+    // lis
+  }
+  &__list-item{
+    text-align: justify;
+    &::before{
+      content: '';
+      --size:10px;
+      height: var(--size);
+      width: var(--size);
+      background-color: v(accent);
+      position: absolute;
+      top: 5px;
+      left: -25px;
+    }
+
+
+  }
+}
+
 .section-btn{
   @extend .t-semibold;
   color: white;
