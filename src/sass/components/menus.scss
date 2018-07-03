@@ -185,7 +185,7 @@
 
       position: absolute;
       top:calc(100% + 10px);
-      width: 200%;
+      width: 100%;
       right: 0;
       display: flex;
       flex-direction: column;
@@ -230,6 +230,8 @@
           &:hover{
             color: v(secondary)
           }
+
+          
         }
         &:hover{
           .menu--sub-menu-l2{
@@ -243,7 +245,7 @@
     }
 
     &__item{
-      text-align: right;
+      text-align: center;
       &:hover{
        
         @include media(md,min){
@@ -285,6 +287,10 @@
           }
         }
         
+      }
+      .sub-menu__trigger{
+        transform: translate(0,-50%);
+        right: 2em;
       }
 
       &:hover{

@@ -953,7 +953,7 @@ a {
   .sub-menu, .sub-menu-l2 {
     position: absolute;
     top: calc(100% + 10px);
-    width: 200%;
+    width: 100%;
     right: 0;
     display: flex;
     flex-direction: column;
@@ -994,7 +994,7 @@ a {
                 transform: scale(1, 1);
         opacity: 1; } }
   .sub-menu__item {
-    text-align: right; }
+    text-align: center; }
     @media (min-width: 54rem) {
       .sub-menu__item:hover .sub-menu-l2 {
         -webkit-transform: scale(1, 1);
@@ -1021,6 +1021,10 @@ a {
     @media (min-width: 54rem) {
       .sub-menu__link.has-sub-menu.open::before {
         content: '\e905 '; } }
+    .sub-menu__link .sub-menu__trigger {
+      -webkit-transform: translate(0, -50%);
+              transform: translate(0, -50%);
+      right: 2em; }
     .sub-menu__link:hover {
       color: #fff;
       -webkit-transform: scale(1, 1);
