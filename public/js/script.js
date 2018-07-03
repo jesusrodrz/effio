@@ -24,7 +24,7 @@ function navBar() {
           menu.style.display = 'flex';
           navTrigger.classList.toggle('open')
           menu.classList.toggle('open')
-
+          document.body.classList.toggle('nav-bar-is-open')
         }
         if (e.target.closest('.has-sub-menu.menu__link')) {
           const subMenu = e.target.parentElement.querySelector('.menu--sub-menu');

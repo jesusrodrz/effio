@@ -831,6 +831,11 @@ a {
   color: white;
   font-family: segoe-ui-semibold;
   transition: all ease-in-out .5s; }
+  .nav-bar-is-open {
+    overflow-y: hidden; }
+    @media (max-width: 54rem) and (orientation: landscape) {
+      .nav-bar-is-open {
+        height: 150vh; } }
   .menu, .menu ul {
     list-style: none;
     margin-left: 0;
@@ -1097,6 +1102,9 @@ a {
     text-align: center;
     text-transform: uppercase;
     font-size: 38px; }
+    @media (max-width: 54rem) and (orientation: landscape) {
+      .slider__title {
+        font-size: 20px; } }
   .slider__btn {
     margin: 1em 0;
     position: relative;
@@ -1110,6 +1118,9 @@ a {
     align-items: center;
     text-transform: uppercase;
     transition: all .2s ease-in-out; }
+    @media (max-width: 54rem) and (orientation: landscape) {
+      .slider__btn {
+        font-size: 16px; } }
     .slider__btn:hover .slider__btn--bg {
       -webkit-transform: skewX(-10deg) scale(1.05);
               transform: skewX(-10deg) scale(1.05); }

@@ -1,4 +1,16 @@
 .menu{
+
+  @at-root .nav-bar-is-open{
+    overflow-y: hidden;
+    @include media(md,max,landscape){
+      height: 150vh;
+    }
+  }
+  // @at-root body{
+  //   @include media(md,max,landscape){
+  //     height: 150vh;
+  //   }
+  // }
   &,ul{
     list-style: none;
     margin-left: 0;
