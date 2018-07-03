@@ -2,20 +2,33 @@
 function navBar() {
   const navBar = document.getElementById('mainNav'),
     navTrigger = document.getElementById('navTrigger'),
-    menu = navBar.querySelector('.menu');
+    menu = navBar.querySelector('.menu'),
+    subMenus = [...navBar.getElementsByClassName('has-sub-menu')];
+
 
 
   if (navBar && navTrigger) {
 
-    let navState = false;
-    let subMenuC = null
+    let navState = false,
+      subMenuAf = null,
+      triggerAf = null;
 
-    console.log(window.outerWidth)
     if (window.outerWidth < 864) {
-      console.log('b')
+      // console.log('b')
+      if (typeof (subTriggers) !== undefined) {
+        const subTriggers = subMenus.map((e, i) => {
+
+          const span = document.createElement('span')
+          span.classList.add('sub-menu__trigger')
+          // span.classList.add('open')
+          e.appendChild(span)
+
+        })
+      }
+
       navBar.addEventListener('click', e => {
         if (e.target.classList.contains('has-sub-menu')) {
-          e.preventDefault();
+          // e.preventDefault();
           // navTrigger.classList.toggle('open')
           // menu.classList.toggle('open')
         }
@@ -25,26 +38,48 @@ function navBar() {
           navTrigger.classList.toggle('open')
           menu.classList.toggle('open')
           document.body.classList.toggle('nav-bar-is-open')
-        }
-        if (e.target.closest('.has-sub-menu.menu__link')) {
-          const subMenu = e.target.parentElement.querySelector('.menu--sub-menu');
-          // console.log(subMenu)
-          e.target.classList.toggle('open');
-          subMenu.classList.toggle('open');
+          navState = !navState;
+          console.log(navState)
+
+          if (navState === false) {
+            const menuItems = [...menu.getElementsByClassName('open')];
+
+            menuItems.forEach(e => {
+              e.classList.remove('open')
+            })
+          }
 
         }
-        if (e.target.closest('.has-sub-menu.menu__link--sub-menu')) {
-          const subMenu = e.target.parentElement.querySelector('.menu--sub-menu-l2');
-          // console.log(subMenu, subMenuC)
-          e.target.classList.toggle('open');
-          subMenu.classList.toggle('open');
-          if (subMenuC && subMenuC !== subMenu) {
+        if (e.target.closest('.sub-menu__trigger')) {
+          e.preventDefault();
+          if (e.target.closest('.has-sub-menu.menu__link')) {
+            const subMenu = e.target.parentElement.parentElement.querySelector('.sub-menu');
+            // console.log(subMenu)
 
-            subMenuC.classList.toggle('open')
-            subMenuC = subMenu;
-          } else if (!subMenuC) {
+            e.target.classList.toggle('open');
+            subMenu.classList.toggle('open');
 
-            subMenuC = subMenu;
+          }
+          if (e.target.closest('.has-sub-menu.sub-menu__link')) {
+            const subMenu = e.target.parentElement.parentElement.querySelector('.sub-menu-l2');
+
+
+            if (subMenuAf && subMenuAf !== subMenu) {
+              if (subMenuAf.classList.contains('open')) {
+                console.log('ok')
+                triggerAf.classList.toggle('open')
+                subMenuAf.classList.toggle('open')
+                e.target.parentElement.parentElement.parentElement.classList.toggle('open--rotate')
+                // subMenuAf = subMenu;
+              }
+            }
+
+            e.target.parentElement.parentElement.parentElement.classList.toggle('open--rotate')
+            e.target.classList.toggle('open');
+            subMenu.classList.toggle('open');
+            subMenuAf = subMenu;
+            triggerAf = e.target;
+
           }
         }
       })

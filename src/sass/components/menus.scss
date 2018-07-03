@@ -6,11 +6,7 @@
       height: 150vh;
     }
   }
-  // @at-root body{
-  //   @include media(md,max,landscape){
-  //     height: 150vh;
-  //   }
-  // }
+
   &,ul{
     list-style: none;
     margin-left: 0;
@@ -44,6 +40,7 @@
 
 
   &__item{
+    
     align-items: center;
     // display: flex;
     margin: 0 0 0 1em;
@@ -62,24 +59,11 @@
 
     }
 
-    &--sub-menu{
-      text-align: right;
-      &:hover{
-       
-        @include media(md,min){
-
-          .menu--sub-menu-l2{
-            transform: scale(1,1);
-            opacity: 1;
     
-          }
-        }
-      }
-    }
     &:hover{
       @include media(md,min){
 
-        .menu--sub-menu{
+        .sub-menu{
           transform: scale(1,1);
           opacity: 1;
   
@@ -101,60 +85,31 @@
       display: block;
       width: 100%;
     }
-    &--sub-menu{
-      padding: 8px 4px;
-      display: block;
-      text-transform: uppercase;
-      color:#bbb7b7;
-      transition: inherit;
+    
 
-      &.#{has-sub-menu}{
+    &.#{has-sub-menu}{
+      @include media(md,min){
 
-        &::before{
+        &::after{
           // display: inline;
-          content:'\e908 dsadsadas';
-          content:'\e907 ';
+          // content:'\e908 dsadsadas';
+          content:'\e908';
           font-family: Flaticon;
           font-size: inherit;
           font-style: normal;
-          vertical-align: center;
-          @include media(md){
-            content:'\e908 ';
-          }
+          // vertical-align: center;
+          margin: 0;
+          padding: 0;
+          display: inline;
+  
+  
+          
         }
-        &.open{
-          &::before{
+        &.open.#{has-sub-menu}{
+          &::after{
+  
             content:'\e905 ';
           }
-        }
-        
-      }
-
-      &:hover{
-        color:#fff;
-        transform: scale(1,1);
-        
-      }
-    }
-
-    &.#{has-sub-menu}{
-      &::after{
-        // display: inline;
-        // content:'\e908 dsadsadas';
-        content:'\e908';
-        font-family: Flaticon;
-        font-size: inherit;
-        font-style: normal;
-        // vertical-align: center;
-        margin: 0;
-        padding: 0;
-        display: inline;
-        
-      }
-      &.open.#{has-sub-menu}{
-        &::after{
-
-          content:'\e905 ';
         }
       }
       @include media(md){
@@ -197,15 +152,26 @@
       
     }
   }
-  &--sub-menu{
 
+
+
+  @at-root .sub-menu{
+    // transform: ;
     @include media(md){
       &.open{
         
         background-image: linear-gradient(to left,rgba($color-primary-dark,1) 0%,rgba($color-primary-dark,1) 100%);
+        transform: scale(1,1) translateY(-200%);
         transform: scale(1,1);
         opacity: 1;
         top:calc(100%);
+      }
+      @include media(md,max,landscape){
+
+        &.open--rotate{
+          top: -200%;
+          // height: 100%;
+        }
       }
       &-l2.open{
         background-image: linear-gradient(to left,rgba($color-primary-dark,1) 0%,rgba($color-primary-dark,1) 100%);
@@ -214,6 +180,7 @@
         top:calc(100%);
       }
     }
+
     &,&-l2{
 
       position: absolute;
@@ -231,6 +198,16 @@
       z-index: 1000;
     }
 
+    &-l2{
+      &__link{
+        padding: 8px 4px;
+        display: block;
+        text-transform: uppercase;
+        color:#bbb7b7;
+        transition: inherit;
+      }
+    }
+
     @include media(md,min){
 
       &-l2{
@@ -242,12 +219,14 @@
         width: 100%;
         right: calc(100% + 5px);
         transition: all ease-out .2s;
-        .menu__item--sub-menu{
+        &__item{
+          
           &:hover{
             color: v(secondary)
           }
         }
-        .menu__link--sub-menu{
+        &__link{
+          position: relative;
           &:hover{
             color: v(secondary)
           }
@@ -262,7 +241,96 @@
   
       }
     }
+
+    &__item{
+      text-align: right;
+      &:hover{
+       
+        @include media(md,min){
+
+          .sub-menu-l2{
+            transform: scale(1,1);
+            opacity: 1;
+    
+          }
+        }
+      }
+    }
+    &__link{
+      padding: 8px 4px;
+      display: block;
+      text-transform: uppercase;
+      color:#bbb7b7;
+      transition: inherit;
+      position: relative;
+      &.#{has-sub-menu}{
+        @include media(md,min){
+
+          &::before{
+            // display: inline;
+            content:'\e908 dsadsadas';
+            content:'\e907 ';
+            font-family: Flaticon;
+            font-size: inherit;
+            font-style: normal;
+            vertical-align: center;
+            @include media(md){
+              content:'\e908 ';
+            }
+          }
+          &.open{
+            &::before{
+              content:'\e905 ';
+            }
+          }
+        }
+        
+      }
+
+      &:hover{
+        color:#fff;
+        transform: scale(1,1);
+        
+      }
+    }
+
+    &__trigger{
+
+      position: absolute;
+
+      top: 50%;
+      right: 50%;
+      // z-index: 2000;
+      transform: translate(5em,-50%);
+      
+      border: solid 1px rgba($color-secondary, .5);
+      display: block;
+      height: 1.2em;
+      width: 1.2em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &::before{
+        content:'\e908';
+          font-family: Flaticon;
+          font-size: inherit;
+         
+          // vertical-align: center;
+         
+          display: inline;
+      }
+      &.open{
+        background-color: rgba($color-secondary, .3);
+        &::before{
+
+          content:'\e905 ';
+        }
+      }
+    }
+
   }
+
 
 }
 

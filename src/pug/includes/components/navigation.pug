@@ -10,17 +10,17 @@ mixin navBar(items,logo)
             a.menu__link(href=item.url) #{item.name}
           if item.subMenu
             a.menu__link.has-sub-menu(href=item.url) #{item.name}
-            ul.menu--sub-menu
+            ul.sub-menu
               each subItem in item.subMenu
-                li.menu__item--sub-menu
+                li.sub-menu__item
                   if !subItem.subMenu
-                    a.menu__link--sub-menu(href=subItem.url) #{subItem.name}
+                    a.sub-menu__link(href=subItem.url) #{subItem.name}
                   if subItem.subMenu
-                    a.menu__link--sub-menu.has-sub-menu(href=subItem.url) #{subItem.name}
-                    ul.menu--sub-menu-l2
+                    a.sub-menu__link.has-sub-menu(href=subItem.url) #{subItem.name}
+                    ul.sub-menu-l2
                       each subItem2 in subItem.subMenu
-                        li.menu__item--sub-menu
-                          a.menu__link--sub-menu(href=subItem2.url) #{subItem2.name}
+                        li.sub-menu-l2__item
+                          a.sub-menu-l2__link(href=subItem2.url) #{subItem2.name}
     a.menu-icon#navTrigger(href="#")
       span.menu-icon__item
       span.menu-icon__item
