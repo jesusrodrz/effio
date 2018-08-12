@@ -1,5 +1,31 @@
 include ../components/navigation
--var items = [{name:'Inicio',url:'#'},{name:'Quienes somos',url:'#'},{name:'Servicios',url:'#',subMenu:[{name:'Inventario de Activo Fijo',url:'#',subMenu:[{name:'Toma de Inventario',url:'#'},{name:'Indentificación de los Bienes',url:'#'},{name:'Conciliación Física y Rentable',url:'#'},{name:'Resultados',url:'#'},{name:'Servicios Complementarios',url:'#'}]},{name:'Inventario de Almacenes',url:'#',subMenu:[{name:'Toma de Inventario 2',url:'#'},{name:'Indentificación de los Bienes 2',url:'#'},{name:'Conciliación Física y Rentable 2',url:'#'},{name:'Resultados 2',url:'#'},{name:'Servicios Complementarios 2',url:'#'}]}]},{name:'Contacto',url:'#'}];
+-
+  var items = [
+    {name:'Inicio',url:'index.html'},
+    {name:'Quienes somos',url:'abount-us.html'},
+    {name:'Servicios',url:'#',
+      subMenu:[
+        {name:'Inventario de Activo Fijo',url:'inventario.html',
+          subMenu:[
+            {name:'Toma de Inventario',url:'detalles.html'},
+            {name:'Indentificación de los Bienes',url:'detalles.html'},
+            {name:'Conciliación Física y Rentable',url:'detalles.html'},
+            {name:'Resultados',url:'detalles.html'},
+            {name:'Servicios Complementarios',url:'detalles.html'}
+            ]
+        },
+        {name:'Inventario de Almacenes',url:'inventario.html',
+          subMenu:[
+            {name:'Toma de Inventario 2',url:'detalles.html'},
+            {name:'Indentificación de los Bienes 2',url:'detalles.html'},
+            {name:'Conciliación Física y Rentable 2',url:'detalles.html'},
+            {name:'Resultados 2',url:'detalles.html'},
+            {name:'Servicios Complementarios 2',url:'detalles.html'}
+          ]
+        }
+      ]},
+    {name:'Contacto',url:'#'}
+  ];
 -var logo='img/effio-logo.png'
 header.main-header
   adress.contac-info
